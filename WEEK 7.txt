@@ -1,0 +1,9 @@
+This is same game returned for both the week 7
+ task and the project since there was never 
+ made a version that would be just the week 7 requirements.
+It should contain all the requirements for week 7 aswell.
+
+1. It is a game, the start was done following the lecture video example.
+2. There are moving enemies and also 2 types of collectibles, as well as falling platforms.
+3. Player can "communicate" with the enemies by killing them by 
+    clicking when close enough (but not too close to be hit)
