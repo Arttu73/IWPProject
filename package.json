@@ -1,0 +1,28 @@
+{
+    "name": "vanilla",
+    "version": "1.0.0",
+    "description": "JavaScript html5 phaser game",
+    "main": "index.html",
+    "scripts": {
+      "start": "parcel index.html",
+      "build": "parcel build index.html"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.18.2",
+      "parcel-bundler": "^1.6.1",
+      "phaser": "^3.60.0"
+    },
+    "devDependencies": {
+      "@babel/core": "7.2.0",
+      "typescript": "4.4.4"
+    },
+    "resolutions": {
+      "@babel/preset-env": "7.13.8"
+    },
+    "keywords": [
+      "javascript",
+      "starter"
+    ]
+  }
+  

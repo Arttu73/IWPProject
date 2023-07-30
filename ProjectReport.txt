@@ -1,0 +1,82 @@
+Added the same report as pdf but just txt format.
+
+Introduction to web programming Project
+
+Arttu Laitinen 30.7.2023
+
+The project is a HTML5 game made using phaser. It is a simple platformer where the goal is to collect all the stars while avoiding or killing bees.
+ 
+Overview of the game and its features
+
+The game has a static map with few of the bees moving around. The map is designed in a way that makes it suitable for both desktop and mobile environments with having vertical map.  Few platforms on the right side are traps that will fall when the player touches them. The HUD also contains a guide for controls and how to beat the game. All the assets are open source with few of the sounds being recorded by myself. 
+
+Player can die by falling off the map or having hp (top left next to heart) go down to 0. Player starts with 6hp and each bee deals 5 damage. There are 2 health packs on the map that both heal 3hp. With both health packs taken player will get to total of 12hp allowing them to survive being hit by 2 of the 4 bees flying around. Bees will die when stinging the player, but player can kill bees by clicking them with mouse when they’re within the attack range.
+Player has idle animation when not moving, different animations for running left and right, jump animation, attack animation and death animation Attack and jumping animations also include a sound effect. Health packs just have small bouncing animation always playing. Bees have a flying animation that doesn’t change directions and sting animation that they do before disappearing when they touch the player. There is no player animation for taking damage, but a sound effect will play.
+
+The game ends and resets when player dies or collects all 5 stars. If the game ends by victory it will play a sound effect and player will be prompted to input their name for the scoreboard. The scoreboard starts empty and will store the five best times with worst time getting removed when limit is exceeded. Player can also choose to not give a name and the time won’t be saved. 
+Tools used
+All the testing was done on 64-bit Windows 10 Home desktop pc version 22H2, build version 19045.3208. Programming was done using Visual studio code. 
+To test the game in browser Wampserver 3.3.0 64 bit was used as the server. 
+The browser used mainly for testing was Google Chrome version 115.0.5790.110 64bit. 
+It was also tested on Mozilla Firefox 98.0 64Bit (acer-002 – 2.0) and Microsoft edge version 115.0.1901.188 64bit.
+Paint 3d was used to mirror the .png containing the spritesheet for the players run animation and to resize the platforms from their original size.
+https://online-voice-recorder.com/ was used to record the jump and damage taken sounds.
+
+Initially tried to do the testing on codesandbox.io, but ran into issues with loading the assets so switched to the Wampserver.
+
+ 
+Features with proposed points and justifications for them
+Feature	Max points
+1.	Well written report	2
+2.	Application is responsive and can be used on both desktop and mobile environment	4
+3.	Application works on Firefox, Safari, Edge and Chrome	2
+4.	There is a clear plot in the game. It has a start and end.	4
+5.	User can get their name in the scoreboard	3
+6.	There are different (more than 1) objects to collect	2
+7.	There are moving parts in the game area (other than the player and enemies, so e.g. some floors fall apart)	3
+8.	Gamer needs to use both keyboard and mouse to meaningfully control the player character	4
+9.	There are enemies that can hurt the player	3
+10.	There is music and sound effects when player shoots/jumps or anything like that	3
+11.	There are multiple animations for player and enemies for different actions	2
+TOTAL	32
+
+Justification for the features
+1.	Report is very good!
+2.	Phaser.Scale.FIT makes the window fit whatever the screen size is making it responsively adapt to whatever the screen size is. The width is set to 640 so it should never be too wide for mobile screens.
+A container containing 2 divs is used to make sure the game and title are always both visible without overlapping each other and no scrollbars appear unless the screen is made extremely tiny. The vertical view fits both environments easily.
+3.	I tested the application on Firefox, Edge and Chrome but not Safari because I didn’t have access to apple devices. It worked on all the browsers. And shouldn’t be using anything that would cause issues for Safari.
+4.	Plot is clear where player just needs to collect 5 stars while avoiding being hit by bees.
+Game ends when player hp goes below 0, they fall off the map or collect all 5 stars and win.
+5.	After collecting 5 stars the browser will prompt to give a name and add their name with their time on the scoreboard (only top 5 times are saved)
+6.	Player can collect stars that are required to finish the game and also health packs to recover their hp 
+7.	There are few fake platforms on the right side off the arena that fall off when player steps on them
+8.	Left, right and up arrows are used for movement and mouse click for attacking the bees
+9.	There are bees flying around that will sting the player when touched (stinging does cause the bee to die aswell)
+10.	There is background music playing, also sound effects for jumping (extremely annoying), attacking, taking damage and fanfare when winning game.
+11.	Total of 9 different animations (player 6, bee 2 and health pack 1), getting the animations to work properly rather than being overridden by other idle/movement animations took some work.
+TOTAL
+
+Known issues
+
+The jumping sound plays very delayed compared to the actual animation.
+Game can get stuck when player dies just as they execute another action like moving or different animation.
+The hitboxes don’t match the models very well, most likely coz the animations had some varying sizes. This causes player to stand bit in the air when they should already be off the platforms and hitboxes with the bees can be deceiving.
+
+ 
+
+Links to sources for assets
+
+Background, ground blocks, player character and animations, bees and animations:
+https://anokolisa.itch.io/sidescroller-pixelart-sprites-asset-pack-forest-16x16 
+Heart image for HUD:
+https://opengameart.org/content/heart-pixel-art 
+Animated health pack:
+https://opengameart.org/content/health-pickup 
+The collectable stars and the HUD element for showing stars collected:
+https://opengameart.org/content/stars-icon-for-ui 
+“Victory” sound effect:
+https://pixabay.com/sound-effects/success-fanfare-trumpets-6185/ 
+“Swing” sound effect:
+https://pixabay.com/sound-effects/swing-6045/ 
+Background music: “We shop song”,  composed by Philip Milman, Funded by Ludwig and Schlatt:
+https://pmmusic.pro/downloads/ 
